@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honour Store - LOL Hesap Satış</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root{
+--bg-dark:#0a0a0f;
+--bg-card:#12121a;
+--accent:#c89b3c;
+--accent-dark:#785a28;
+--text-primary:#f0e6d2;
+--text-secondary:#a09b8c;
+}
+
+body{
+background:var(--bg-dark);
+color:var(--text-primary);
+font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+.navbar{
+background:rgba(10,10,15,.95)!important;
+border-bottom:1px solid var(--accent-dark);
+}
+
+.hero{
+background:linear-gradient(135deg,var(--bg-dark) 0%,#1a1a2e 100%);
+padding:4rem 0;
+text-align:center;
+border-bottom:2px solid var(--accent-dark);
+}
+
+.hero-logo{
+width:120px;
+height:120px;
+border-radius:50%;
+border:3px solid var(--accent);
+object-fit:cover;
+margin-bottom:1rem;
+}
+
+.hero h1{
+color:var(--accent);
+font-size:2.8rem;
+font-weight:900;
+letter-spacing:2px;
+}
+
+.hero p{
+color:var(--text-secondary);
+font-size:1.2rem;
+}
+
+.section{padding:3rem 0;}
+
+.section-title{
+color:var(--accent);
+border-bottom:2px solid var(--accent-dark);
+display:inline-block;
+margin-bottom:2rem;
+}
+
+.product-card{
+background:var(--bg-card);
+border:1px solid var(--accent-dark);
+border-radius:12px;
+overflow:hidden;
+transition:.3s;
+height:100%;
+}
+
+.product-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(200,155,60,.2);
+}
+
+.product-banner{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+.product-body{padding:1.5rem;}
+
+.product-price{
+color:var(--accent);
+font-size:1.3rem;
+font-weight:bold;
+}
+
+.btn-stock-out{
+background:#3a3a4a;
+color:#888;
+border:none;
+width:100%;
+padding:.75rem;
+border-radius:8px;
+cursor:not-allowed;
+}
+
+.stock-badge{
+background:#dc3545;
+color:#fff;
+padding:.25rem .75rem;
+border-radius:20px;
+font-size:.75rem;
+}
+
+.why-us{
+background:var(--bg-card);
+border:1px solid var(--accent-dark);
+border-radius:12px;
+padding:2rem;
+height:100%;
+}
+
+.footer{
+background:var(--bg-card);
+border-top:1px solid var(--accent-dark);
+padding:2rem 0;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<div class="container">
+<a class="navbar-brand" href="#">
+<img src="honour.png" height="45">
+</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<img src="honour.png" class="hero-logo">
+<h1>HONOUR STORE</h1>
+<p>Guvenilir League of Legends Hesap Magazasi</p>
+</div>
+</section>
+
+<!-- RANDOM HESAPLAR -->
+<section id="random" class="section">
+<div class="container">
+<h2 class="section-title">LOL RANDOM HESAPLAR</h2>
+<div class="row g-4">
+
+<!-- 1 -->
+<div class="col-md-4 col-sm-6">
+<div class="product-card">
+<img src="afis.png" class="product-banner">
+<div class="product-body">
+<div class="d-flex justify-content-between mb-2">
+<h5>20-850 Skin TR Random</h5>
+<span class="stock-badge">STOK YOK</span>
+</div>
+<p class="product-price">20 TL</p>
+<button class="btn-stock-out" disabled>Stok Yok</button>
+</div>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="col-md-4 col-sm-6">
+<div class="product-card">
+<img src="afis.png" class="product-banner">
+<div class="product-body">
+<div class="d-flex justify-content-between mb-2">
+<h5>50-85 Skin TR Random</h5>
+<span class="stock-badge">STOK YOK</span>
+</div>
+<p class="product-price">25 TL</p>
+<button class="btn-stock-out" disabled>Stok Yok</button>
+</div>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="col-md-4 col-sm-6">
+<div class="product-card">
+<img src="afis.png" class="product-banner">
+<div class="product-body">
+<div class="d-flex justify-content-between mb-2">
+<h5>100-850 Skin TR Random</h5>
+<span class="stock-badge">STOK YOK</span>
+</div>
+<p class="product-price">30 TL</p>
+<button class="btn-stock-out" disabled>Stok Yok</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- MAIL DEGİŞEN -->
+<section id="mail" class="section" style="background:rgba(200,155,60,.05)">
+<div class="container">
+<h2 class="section-title">MAIL DEGİSEN HESAPLAR</h2>
+<div class="row g-4">
+
+<div class="col-md-4 col-sm-6">
+<div class="product-card">
+<img src="afis.png" class="product-banner">
+<div class="product-body">
+<div class="d-flex justify-content-between mb-2">
+<h5>20-120 Skin Full Erisim</h5>
+<span class="stock-badge">STOK YOK</span>
+</div>
+<p class="product-price">100 TL</p>
+<button class="btn-stock-out" disabled>Stok Yok</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-6">
+<div class="product-card">
+<img src="afis.png" class="product-banner">
+<div class="product-body">
+<div class="d-flex justify-content-between mb-2">
+<h5>50-120 Skin Full Erisim</h5>
+<span class="stock-badge">STOK YOK</span>
+</div>
+<p class="product-price">180 TL</p>
+<button class="btn-stock-out" disabled>Stok Yok</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-6">
+<div class="product-card">
+<img src="afis.png" class="product-banner">
+<div class="product-body">
+<div class="d-flex justify-content-between mb-2">
+<h5>80-150 Skin Full Erisim</h5>
+<span class="stock-badge">STOK YOK</span>
+</div>
+<p class="product-price">220 TL</p>
+<button class="btn-stock-out" disabled>Stok Yok</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- NEDEN BİZ -->
+<section class="section">
+<div class="container">
+<h2 class="section-title">Neden Bizi Tercih Etmelisiniz?</h2>
+<div class="row g-4">
+<div class="col-md-4"><div class="why-us"><h5>Guvenilir Satis</h5><p>Tum hesaplar kontrol edilir.</p></div></div>
+<div class="col-md-4"><div class="why-us"><h5>Aninda Teslim</h5><p>Stokta olanlar aninda.</p></div></div>
+<div class="col-md-4"><div class="why-us"><h5>Destek</h5><p>Discord uzerinden yardim.</p></div></div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<p>2024 Honour Store - Tum haklari saklidir.</p>
+</div>
+</footer>
+
+</body>
+</html>
