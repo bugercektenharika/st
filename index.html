@@ -3,392 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Honour - LoL Hesap Satış</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Honour Store - LOL Hesap Satış</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-gold: #c89b3c;
-            --dark-bg: #0a0a0f;
-            --card-bg: #13131a;
-            --text-light: #f0e6d2;
-            --text-muted: #8b8b8b;
-            --danger-red: #e84057;
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --accent: #c89b3c;
+            --accent-dark: #785a28;
+            --text-primary: #f0e6d2;
+            --text-secondary: #a09b8c;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-light);
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
         }
-
-        /* Navbar */
+        
         .navbar {
-            background: linear-gradient(180deg, rgba(10,10,15,0.98) 0%, rgba(19,19,26,0.95) 100%);
-            border-bottom: 1px solid var(--primary-gold);
+            background: rgba(10, 10, 15, 0.95) !important;
+            border-bottom: 1px solid var(--accent-dark);
             padding: 1rem 0;
         }
-
+        
         .navbar-brand img {
             height: 50px;
-            filter: drop-shadow(0 0 10px rgba(200, 155, 60, 0.3));
         }
-
+        
         .nav-link {
-            color: var(--text-light) !important;
+            color: var(--text-primary) !important;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
-
+        
         .nav-link:hover {
-            color: var(--primary-gold) !important;
+            color: var(--accent) !important;
         }
-
-        /* Hero Section */
+        
         .hero {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a2e 50%, var(--dark-bg) 100%);
-            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a2e 100%);
+            padding: 4rem 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            border-bottom: 2px solid var(--accent-dark);
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(200, 155, 60, 0.1) 0%, transparent 60%);
-        }
-
+        
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            text-shadow: 0 0 30px rgba(200, 155, 60, 0.5);
+            color: var(--accent);
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-
+        
         .hero p {
+            color: var(--text-secondary);
             font-size: 1.2rem;
-            color: var(--text-muted);
         }
-
-        /* Section Titles */
+        
         .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-top: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            position: relative;
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-dark);
             display: inline-block;
         }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
-        }
-
-        /* Product Cards */
+        
         .product-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(200, 155, 60, 0.2);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-dark);
+            border-radius: 12px;
             overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
         }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-gold), #f0e6d2, var(--primary-gold));
-        }
-
+        
         .product-card:hover {
             transform: translateY(-5px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 10px 40px rgba(200, 155, 60, 0.15);
+            box-shadow: 0 10px 30px rgba(200, 155, 60, 0.2);
         }
-
-        .product-card h5 {
-            color: var(--text-light);
-            font-weight: 600;
-            margin-bottom: 1rem;
+        
+        .product-banner {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
         }
-
-        .product-card .price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
+        
+        .product-body {
+            padding: 1.5rem;
         }
-
-        .product-card .price span {
-            font-size: 1rem;
-            color: var(--text-muted);
-        }
-
-        /* Out of Stock Badge */
-        .out-of-stock {
-            background: var(--danger-red);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-block;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        .product-card.disabled {
-            opacity: 0.7;
-        }
-
-        .product-card.disabled::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(0,0,0,0.1) 10px,
-                rgba(0,0,0,0.1) 20px
-            );
-            pointer-events: none;
-        }
-
-        /* Features */
-        .features {
-            background: var(--card-bg);
-            padding: 4rem 0;
-            margin-top: 3rem;
-        }
-
-        .feature-item {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .feature-item i {
-            font-size: 3rem;
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
-        }
-
-        .feature-item h5 {
-            color: var(--text-light);
+        
+        .product-title {
+            color: var(--text-primary);
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
-
-        .feature-item p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        
+        .product-price {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
         }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(180deg, var(--card-bg) 0%, var(--dark-bg) 100%);
-            border-top: 1px solid rgba(200, 155, 60, 0.2);
-            padding: 3rem 0 1.5rem;
+        
+        .btn-stock-out {
+            background: #3a3a4a;
+            color: #888;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            width: 100%;
+            cursor: not-allowed;
+            font-weight: 600;
+        }
+        
+        .stock-badge {
+            background: #dc3545;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--accent-dark);
+            padding: 2rem 0;
+            margin-top: 4rem;
             text-align: center;
         }
-
-        footer img {
-            height: 40px;
-            margin-bottom: 1rem;
-            opacity: 0.8;
+        
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
         }
-
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .product-card {
-                padding: 1.5rem;
-            }
+        
+        .section {
+            padding: 3rem 0;
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="honour.png" alt="Honour Logo">
+                <img src="honour.png" alt="Honour Store">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#random">Random Hesaplar</a>
+                        <a class="nav-link" href="#"><i class="fas fa-home me-1"></i> Ana Sayfa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#mail">Mail Değişen</a>
+                        <a class="nav-link" href="#random"><i class="fas fa-dice me-1"></i> Random Hesaplar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#iletisim">İletişim</a>
+                        <a class="nav-link" href="#mail"><i class="fas fa-envelope me-1"></i> Mail Degisen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-discord me-1"></i> Discord</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="container position-relative">
-            <h1>⚔️ HONOUR STORE ⚔️</h1>
-            <p>Güvenilir League of Legends Hesap Satışı</p>
-        </div>
-    </section>
-
-    <!-- Random Hesaplar -->
-    <section id="random" class="container py-5">
-        <div class="section-title">
-            <h2>🎲 LOL RANDOM HESAPLAR</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="product-card disabled">
-                    <h5>30-850 Skinli Hesap</h5>
-                    <p class="price">19₺ <span>/ hesap</span></p>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">TR Server • Instant Teslimat</p>
-                    <span class="out-of-stock">STOK YOK</span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card disabled">
-                    <h5>50-850 Skinli Hesap</h5>
-                    <p class="price">20₺ <span>/ hesap</span></p>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">TR Server • Instant Teslimat</p>
-                    <span class="out-of-stock">STOK YOK</span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card disabled">
-                    <h5>100-850 Skinli Hesap</h5>
-                    <p class="price">30₺ <span>/ hesap</span></p>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">TR Server • Instant Teslimat</p>
-                    <span class="out-of-stock">STOK YOK</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mail Değişen Hesaplar -->
-    <section id="mail" class="container py-5">
-        <div class="section-title">
-            <h2>📧 MAİL DEĞİŞEN HESAPLAR</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="product-card disabled">
-                    <h5>Mail Değişen 20-120 Skin</h5>
-                    <p class="price">100₺ <span>/ hesap</span></p>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Full Erişim • Garanti</p>
-                    <span class="out-of-stock">STOK YOK</span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card disabled">
-                    <h5>Mail Değişen 50-120 Skin</h5>
-                    <p class="price">180₺ <span>/ hesap</span></p>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Full Erişim • Garanti</p>
-                    <span class="out-of-stock">STOK YOK</span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card disabled">
-                    <h5>Mail Değişen 80-150 Skin</h5>
-                    <p class="price">220₺ <span>/ hesap</span></p>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Full Erişim • Garanti</p>
-                    <span class="out-of-stock">STOK YOK</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section class="features">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="feature-item">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
-                        <h5>Güvenli Alışveriş</h5>
-                        <p>Tüm işlemler güvenli şekilde gerçekleştirilir</p>
+            <h1><i class="fas fa-crown me-2"></i> HONOUR STORE</h1>
+            <p><i class="fas fa-gamepad me-2"></i> Guvenilir League of Legends Hesap Magazasi</p>
+        </div>
+    </section>
+
+    <section id="random" class="section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-dice me-2"></i> LOL RANDOM HESAPLAR</h2>
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Random Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-user-secret me-1"></i> 0-30K ME Random</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 20 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="feature-item">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
-                        <h5>Hızlı Teslimat</h5>
-                        <p>Ödeme sonrası anında teslimat</p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Random Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-user-secret me-1"></i> 30-60K ME Random</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 35 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="feature-item">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
-                        <h5>7/24 Destek</h5>
-                        <p>Her zaman yanınızdayız</p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Random Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-user-secret me-1"></i> 60-100K ME Random</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 50 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Random Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-user-secret me-1"></i> 100-150K ME Random</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 75 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Random Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-user-secret me-1"></i> 150-200K ME Random</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 100 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Random Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-user-secret me-1"></i> 200K+ ME Random</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 150 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="iletisim">
+    <section id="mail" class="section" style="background: rgba(200, 155, 60, 0.05);">
         <div class="container">
-            <img src="honour.png" alt="Honour Logo">
-            <p>© 2024 Honour Store - Tüm Hakları Saklıdır</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">Bu site Riot Games ile bağlantılı değildir.</p>
+            <h2 class="section-title"><i class="fas fa-envelope-open-text me-2"></i> MAIL DEGISEN HESAPLAR</h2>
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Mail Degisen Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-envelope me-1"></i> 0-30K ME Full Erisim</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 40 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Mail Degisen Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-envelope me-1"></i> 30-60K ME Full Erisim</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 70 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Mail Degisen Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-envelope me-1"></i> 60-100K ME Full Erisim</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 100 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Mail Degisen Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-envelope me-1"></i> 100-150K ME Full Erisim</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 150 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Mail Degisen Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-envelope me-1"></i> 150-200K ME Full Erisim</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 200 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <img src="afis.png" alt="Mail Degisen Hesap" class="product-banner">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="product-title mb-0"><i class="fas fa-envelope me-1"></i> 200K+ ME Full Erisim</h5>
+                                <span class="stock-badge"><i class="fas fa-times-circle me-1"></i> STOK YOK</span>
+                            </div>
+                            <p class="product-price"><i class="fas fa-tag me-1"></i> 300 TL</p>
+                            <button class="btn-stock-out" disabled><i class="fas fa-ban me-1"></i> Stok Tukendi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p><i class="fas fa-shield-alt me-1"></i> 2024 Honour Store - Tum haklari saklidir.</p>
+            <p><a href="#"><i class="fab fa-discord me-1"></i> Discord</a> | <a href="#"><i class="fab fa-instagram me-1"></i> Instagram</a></p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
