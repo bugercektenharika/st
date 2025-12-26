@@ -272,5 +272,49 @@ text-align:center;
 </div>
 </footer>
 
+<script>
+    const supabaseUrl = 'https://xjeaudzyjeqixcldknje.supabase.co/' 
+    const supabaseKey = 'sb_publishable_5L-OrbLtYpdSogRbS3nupg__MGcA-V7'
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey)
+
+    async function login() {
+        const { error } = await supabaseClient.auth.signInWithOAuth({
+            provider: 'discord',
+            options: { redirectTo: window.location.origin }
+        })
+        if (error) alert('Hata: ' + error.message)
+    }
+
+    async function logout() {
+        await supabaseClient.auth.signOut()
+        window.location.reload()
+    }
+
+    async function checkUser() {
+        const { data: { session } } = await supabaseClient.auth.getSession()
+        const authSection = document.getElementById('auth-section')
+
+        if (session) {
+            const user = session.user
+            const avatar = user.user_metadata.avatar_url
+            const name = user.user_metadata.full_name
+
+            await supabaseClient.from('profiller').upsert({ 
+                id: user.id, 
+                username: name, 
+                avatarurl: avatar 
+            })
+
+            authSection.innerHTML = `
+                <div class="d-flex align-items-center bg-dark p-1 rounded-pill border border-secondary">
+                    <img src="${avatar}" class="user-avatar me-2">
+                    <span class="text-light me-3 d-none d-md-inline" style="font-size:0.85rem;">${name}</span>
+                    <button onclick="logout()" class="btn btn-sm btn-danger rounded-pill" style="font-size:0.7rem;">Çıkış</button>
+                </div>`
+        }
+    }
+
+    checkUser()
+</script>
 </body>
 </html>
